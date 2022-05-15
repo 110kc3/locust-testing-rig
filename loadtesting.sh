@@ -1,1 +1,1 @@
-locust -f locust.py --host http://34.116.172.76/ --users 10 --spawn-rate 20
+locust -f locust.py --host http://kamil-choinski.com/ --users 10 --spawn-rate 20
