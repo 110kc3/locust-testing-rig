@@ -1,5 +1,5 @@
 
-from locustfile import HttpUser, TaskSet,task,between
+from locust import HttpUser, TaskSet,task,between
 
 class UserBehaviour(TaskSet):
 
