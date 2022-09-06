@@ -1,5 +1,5 @@
 
-from locustfile import HttpLocust, TaskSet,task,between
+from locustfile import HttpUser, TaskSet,task,between
 
 class UserBehaviour(TaskSet):
 
@@ -21,7 +21,7 @@ class UserBehaviour(TaskSet):
 
 
 
-class User(HttpLocust):
+class User(HttpUser):
     task_set=UserBehaviour
     wait_time = between(5, 10)
     host="http://34.118.0.152:8080"
