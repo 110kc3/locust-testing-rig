@@ -3,6 +3,7 @@ import time
 from locust import HttpUser, User,task,between
 
 
+# Loding numbers to sort into list  
 data_to_sort = []
 with open('1k_numbers.txt') as f:
     for line in f:
@@ -18,7 +19,7 @@ with open('1k_numbers.txt') as f:
 class User(HttpUser):
     # task_set=[bubblesort_post]
     wait_time = between(5, 10)
-    host="http://34.118.0.152:8080"
+    host="http://kamil-choinski.com"
 
 
     @task
@@ -36,7 +37,8 @@ class User(HttpUser):
               "sorting_algorithm": content_to_write['sorting_algorithm'],
               "time_of_execution (s)" :content_to_write['time_of_execution (s)']}
             print(content_to_write)
-            ( f.write(bytes(str(content_to_write), 'utf-8')+bytes("\n", 'utf-8')))
+            #writing response to file
+            (f.write(bytes(str(content_to_write), 'utf-8')+bytes("\n", 'utf-8')))
             # f.write(response.content+bytes("\n", 'utf-8'))
             count += 1
 
